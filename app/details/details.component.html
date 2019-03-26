@@ -1,0 +1,24 @@
+<StackLayout class="page"
+             xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <AbsoluteLayout class="play-pause">
+        <Image [src]="result['cover']" class="cover"></Image>
+        <Image class="cover"></Image>
+        <Image (tap)="onTap($event)" class="playButton" visibility="{{ !player.isAudioPlaying() ? 'visible' : 'collapsed' }}"></Image>
+        <Image (tap)="onTap($event)" class="pauseButton" visibility="{{ player.isAudioPlaying() ? 'visible' : 'collapsed' }}"></Image>
+    </AbsoluteLayout>
+
+    <Label [text]="result['artist']" class="artistLabel"></Label>
+
+    <ListView [items]="albumResults" height="100%" (itemTap)="onItemTap($event)" class="list-group">
+        <ng-template let-result="item" let-i="index" let-odd="odd" let-even="even">
+            <!-- The item template can only have a single root view container (e.g. GridLayout, StackLayout, etc.)-->
+            <StackLayout orientation="horizontal" class="list-group-item">
+                <Image row="0" col="0" rowSpan="2" height="108" width="108" [src]="result.cover_medium" class="thumb p-16"></Image>
+                <Label [text]="result.title"></Label>
+                <Label [text]=""
+            </StackLayout>
+        </ng-template>
+    </ListView>
+
+</StackLayout>

@@ -1,0 +1,24 @@
+<GridLayout xmlns:lv="nativescript-ui-listview" xmlns="http://www.nativescript.org/tns.xsd" class="page" rows="*, auto">
+    <StackLayout row="0">
+        <StackLayout orientation="horizontal">
+            <Label text="Deeve-Script" class="title"></Label>
+
+            <SearchBar visibility="visible" hint="Artist..." [text]="searchPhrase" (submit)="onSubmit($event)" color="black" textFieldHintColor="#a9a9a9"></SearchBar>
+        </StackLayout>
+
+        <ListView [items]="searchResults" height="100%" (itemTap)="onItemTap($event)" class="list-group">
+            <ng-template let-result="item" let-i="index" let-odd="odd" let-even="even">
+                <!-- The item template can only have a single root view container (e.g. GridLayout, StackLayout, etc.)-->
+                <StackLayout orientation="horizontal" class="list-group-item"> <!--[nsRouterLink]="['/details']"-->
+                    <Image row="0" col="0" rowSpan="2" height="108" width="108" [src]="result.album.cover_medium" class="thumb p-16"></Image>
+                    <GridLayout class="list-group-item" rows="auto *" columns="*">
+                        <Label row="0" col="0" [text]="result.title" class="list-group-item-heading"></Label>
+                        <Label row="1" col="0" class="list-group-item-text" [text]="result.artist.name"></Label>
+                    </GridLayout>
+                </StackLayout>
+            </ng-template>
+        </ListView>
+
+    </StackLayout>
+
+</GridLayout>

@@ -1,0 +1,37 @@
+.play-pause {
+    margin-top: 20dp;
+}
+
+.play-pause, .play-pause .cover {
+    border-radius: 100dp;
+    width: 200dp;
+    height: 200dp;
+    background-color: rgba(100, 100, 100, 0.3);
+}
+
+.playButton {
+    box-sizing: border-box;
+    width: 75dp;
+    height: 75dp;
+    margin-top: 62.5dp;
+    margin-left: 62.5dp;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+    border-width: 37.5dp 0dp 37.5dp 75dp;
+}
+
+.pauseButton {
+    width: 75dp;
+    height: 75dp;
+    margin-top: 62.5dp;
+    margin-left: 62.5dp;
+    border-style: double;
+    border-width: 0dp 28dp 0dp 28dp;
+    border-color: white;
+}
+
+.artistLabel {
+    text-align: center;
+    font-size: 20%;
+    margin-top: 15dp;
+}
