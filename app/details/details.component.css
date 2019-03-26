@@ -32,6 +32,18 @@
 
 .artistLabel {
     text-align: center;
+    font-size: 15%;
+    color: grey;
+    margin-top: 10dp;
+}
+
+.albumLabel {
+    text-align: center;
     font-size: 20%;
+    color: black;
     margin-top: 15dp;
+}
+
+.durationLabel {
+    font-size: 15%;
 }

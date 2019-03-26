@@ -19,12 +19,6 @@ export class HomeComponent extends Observable implements OnInit {
     public searchResults: Array<SearchResult>;
     public searchPhrase: string;
 
-    public tabs: BottomNavigationTab[] = [
-        new BottomNavigationTab('Home', 'ic_home'),
-        new BottomNavigationTab('Search', 'baseline_search_white_18', false),
-        new BottomNavigationTab('Account', 'baseline_account_circle_white_18', false)
-    ];
-
     constructor(private page: Page, private router: Router) {
         super();
         this.page.actionBarHidden = true;
@@ -59,18 +53,11 @@ export class HomeComponent extends Observable implements OnInit {
                 "artist": this.searchResults[event.index].artist.name,
                 "title": this.searchResults[event.index].title,
                 "artistId": this.searchResults[event.index].artist.id,
-                "preview": this.searchResults[event.index].preview
+                "preview": this.searchResults[event.index].preview,
+                "albumId": this.searchResults[event.index].album.id
             }
         };
 
         this.router.navigate(["/details"], navigationExtras);
-    }
-
-    onBottomNavigationTabPressed(args: OnTabPressedEventData): void {
-        console.log(`Tab pressed:  ${args.index}`);
-    }
-
-    onBottomNavigationTabSelected(args: OnTabSelectedEventData): void {
-        console.log(`Tab selected:  ${args.oldIndex}`);
     }
 }
